@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JobListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/job_listings', [JobListingController::class, 'index']);
+Route::get('/job_listings/{id}', [JobListingController::class, 'show']);
+Route::post('/job_listings', [JobListingController::class, 'store']);
+Route::put('/job_listings/{id}', [JobListingController::class, 'update']);
+Route::delete('/job_listings/{id}', [JobListingController::class, 'delete']);
