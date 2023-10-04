@@ -19,6 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+// TODO - protect this api , relate all job listing with user as creator
 Route::get('/job_listings', [JobListingController::class, 'index']);
 Route::get('/job_listings/{id}', [JobListingController::class, 'show']);
 Route::post('/job_listings', [JobListingController::class, 'store']);
