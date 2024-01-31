@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobListingsController;
+use App\Http\Controllers\UserProfilesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('joblistings', JobListingsController::class);
+Route::apiResource('userprofiles', UserProfilesController::class);
+
